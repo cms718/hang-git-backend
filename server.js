@@ -5,8 +5,8 @@ const express = require("express");
 require("dotenv/config");
 
 const app = express();
-
-app.use("/players", cors(), players);
+app.use(cors());
+app.use("/players", players);
 
 mongoose.connect(
   process.env.DB_URI,
