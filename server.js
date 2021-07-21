@@ -18,4 +18,6 @@ var db = mongoose.connection;
 
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
 
-app.listen(5000, () => console.log(`Server listening on port 5000`));
+const PORT = process.env.PORT;
+
+app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
