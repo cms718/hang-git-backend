@@ -6,8 +6,8 @@ const express = require("express");
 require("dotenv/config");
 
 const app = express();
-
 app.use(cors());
+app.options("*", cors());
 app.use(express.json());
 
 app.use("/players", players);
