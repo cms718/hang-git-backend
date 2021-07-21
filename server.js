@@ -1,5 +1,12 @@
 const mongoose = require("mongoose");
+const players = require("./routes/player");
+const cors = require("cors");
+const express = require("express");
 require("dotenv/config");
+
+const app = express();
+
+app.use("/players", cors(), players);
 
 mongoose.connect(
   process.env.DB_URI,
@@ -10,3 +17,5 @@ mongoose.connect(
 var db = mongoose.connection;
 
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
+
+app.listen(5000, () => console.log("Server listening on port 5000"));
