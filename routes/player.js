@@ -20,7 +20,8 @@ router.post("/", async (req, res) => {
     const savePlayer = await player.save();
     res.json(savePlayer);
   } catch (err) {
-    res.json({ message: err });
+    console.error(err);
+    res.status(500).json({ message: err });
   }
 });
 
