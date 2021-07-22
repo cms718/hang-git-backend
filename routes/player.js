@@ -4,7 +4,7 @@ const Player = require("../models/Player");
 
 router.get("/", async (req, res) => {
   try {
-    const players = await Player.find({});
+    const players = await Player.find({}).sort({ score: -1 });
     res.json(players);
   } catch (err) {
     res.json({ message: err });
