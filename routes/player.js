@@ -15,6 +15,7 @@ router.post("/", async (req, res) => {
   const player = new Player({
     name: req.body.name,
     score: req.body.score,
+    difficulty: req.body.difficulty,
   });
   try {
     const savePlayer = await player.save();

@@ -11,6 +11,10 @@ var PlayerSchema = new Schema({
     type: Number,
     required: true,
   },
+  difficulty: {
+    type: String,
+    required: true,
+  },
   date: {
     type: Date,
     default: Date.now,
